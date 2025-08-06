@@ -1,52 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import "tailwindcss";
 
+@font-face {
+  font-family: "Nico Moji";
+  src: url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.eot");
+  src: url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.eot?#iefix") format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.woff") format("woff"),
+    url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.ttf") format("truetype"),
+    url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.svg#Nico Moji") format("svg");
+}
 
-* {
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+html,
+body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-html {
-  width: 100vw;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  overflow-x: hidden;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-.web-container {
-  width: 100vw;
-  height: 100vh;
+body {
+  background: #262322;
+  color: #FC6351;
+  font-family: "Nico Moji", monospace;
+  font-size: 16px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #EBEBEB;
-  font-family: "Nunito Sans", sans-serif;
-}
-
-.alert-container {
-  width: 900px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
-.alert-container h1 {
-  font-size: 3em;
-  font-weight: 300;
-  color: #444440;
-}
 
-.alert-container h2 {
-  font-size: 3em;
-  font-weight: 300;
-  color: #444440;
-}
+.header-diagonal::before {
+  content: '';
+  position: absolute;
+  bottom: 29px;
+  left: -75px;
+  /* lo acercamos más al sidebar */
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  background-color: #262322;
+  /* color del fondo del sidebar */
+  z-index: 59;
 
-.alert-container img {
-  width: 50px;
+  /* solo borde en la base diagonal */
+  border-top: 3px solid #FC6351;
+  transform: rotate(-135deg);
+  /* no lo rotamos, ya está en diagonal natural */
 }
